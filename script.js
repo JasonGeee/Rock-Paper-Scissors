@@ -54,9 +54,6 @@ function playerChoice() {
 // Paper beats rock
 function playRound(playerSelection, computerSelection) {
 
-    // playerSelection = playerChoice();
-    // computerSelection = computerPlay();
-
     if (playerSelection == "rock" && computerSelection == "scissors") {
         console.log("You win! Rock beats Scissors");
         return ++playerScore;
@@ -80,29 +77,11 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    
-    playRound(playerSelection, computerSelection);
-    console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
+    do {
+        playRound(playerChoice(), computerPlay());
+        console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
 
-    playerSelection = playerChoice();
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
-
-    playerSelection = playerChoice();
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
-
-    playerSelection = playerChoice();
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
-
-    playerSelection = playerChoice();
-    computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
+    } while (playerScore < 5 && computerScore < 5);
 
     if (playerScore > computerScore) {
         return "Player wins all!";
@@ -115,7 +94,5 @@ function game() {
 
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = playerChoice();
-let computerSelection = computerPlay(); 
 console.log(game());
 
