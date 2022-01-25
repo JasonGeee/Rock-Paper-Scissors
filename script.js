@@ -94,5 +94,12 @@ function game() {
 
 let playerScore = 0;
 let computerScore = 0;
-console.log(game());
+
+let btn = document.querySelector('#btnR');
+btn.addEventListener('click', () => {
+    alert('Hello');
+});
+
+
+//console.log(game());
 
