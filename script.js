@@ -44,10 +44,8 @@ function computerPlay() {
 function playerChoice() {
     let selection = prompt("Choose: Rock, Paper, or Scissors?");
     let newSelection = selection.toLowerCase();
-    return newSelection;
+    return newSelection
 }
-
-
 
 // Rock beats scissors
 // Scissors beats paper
@@ -76,9 +74,11 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
 function game() {
     do {
         playRound(playerChoice(), computerPlay());
+        //playRound();
         console.log(`Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
 
     } while (playerScore < 5 && computerScore < 5);
@@ -94,12 +94,6 @@ function game() {
 
 let playerScore = 0;
 let computerScore = 0;
-
-let btn = document.querySelector('#btnR');
-btn.addEventListener('click', () => {
-    alert('Hello');
-});
-
-
+let userChoice;
 //console.log(game());
 
